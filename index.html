@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo de Veículos</title>
+    <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Catálogo de Veículos</h1>
+        <div class="filters">
+            <input type="text" id="search" placeholder="Buscar por modelo ou marca..."
+                aria-label="Buscar por modelo ou marca" />
+            <select id="typeFilter" aria-label="Filtrar por tipo de veículo">
+                <option value="">Todos os tipos</option>
+                <option value="SUV">SUV</option>
+                <option value="Sedan">Sedan</option>
+                <option value="Hatch">Hatch</option>
+                <option value="Coupe">Coupe</option>
+                <option value="Limousine">Limousine</option>
+                <option value="Supercarro">Supercarro</option>
+                <option value="Convertible">Conversível</option>
+                <option value="Hypercar">Hypercar</option>
+                <option value="Grand Tourer">Grand Tourer</option>
+            </select>
+        </div>
+    </header>
+
+    <main id="vehicleList" class="grid"></main>
+    <section>
+        <h2>Agendamentos</h2>
+        <div id="agendamentosList" class="agendamentos-container"></div>
+    </section>
+    <!-- Modal Agendamento -->
+    <div class="modal" id="testDriveModal">
+        <div class="modal-content">
+            <span class="close" role="button" aria-label="Fechar modal">&times;</span>
+            <h2>Agendar Test Drive</h2>
+            <form id="scheduleForm">
+                <label for="name">Nome:
+                    <input type="text" name="name" id="name" required />
+                </label>
+                <label for="email">E-mail:
+                    <input type="email" name="email" id="email" required />
+                </label>
+                <label for="date">Data:
+                    <input type="date" name="date" id="date" required />
+                </label>
+                <label for="time">Horário:
+                    <input type="time" name="time" id="time" min="07:30" max="19:00" required />
+                </label>
+                <label for="location">Local:
+                    <input type="text" name="location" id="location" value="Concessionária MAX-FIVE" readonly />
+                </label>
+                <button type="submit">Confirmar Agendamento</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
